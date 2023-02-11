@@ -1,0 +1,57 @@
+---
+title: "Generative Art With R"
+author: J.D. Dato
+render: HTML
+link-external-icon: true
+link-external-newwindow: true
+theme: solar
+---
+
+# Example Work of My Generative Art:
+
+All of the below images were made entirely in R using the `generativeart` R Package which is available on [GitHub](https://github.com/cutterkom/generativeart).
+
+!["The Path to Hell" (2023)](images/2023-02-11-16-42_seed_5374.png){fig-align="center"}
+
+!["Cyan Swirls" 2023](images/2023-02-11-16-15_seed_7317.png)
+
+# How did I do this?
+
+**I have to be honest**, I relied very much on the provided documentation of the package and ChatGPT to start working. The first image, which I have titled, *The Path to Hell*, was made entirely by me. I used a large uniform distribution to run some simple equations in, and set the output colors to red and black in a Polar grid.
+
+## The Code for *The Path to Hell*:
+
+```{r, eval=FALSE}
+# This is my first take on generative art in R
+devtools::install_github("cutterkom/generativeart")
+
+library(generativeart)
+
+# This is how the documentation says to run the program
+
+library(generativeart)
+
+# set the paths
+IMG_DIR <- "img/"
+IMG_SUBDIR <- "everything/"
+IMG_SUBDIR2 <- "handpicked/"
+IMG_PATH <- paste0(IMG_DIR, IMG_SUBDIR)
+
+LOGFILE_DIR <- "logfile/"
+LOGFILE <- "logfile.csv"
+LOGFILE_PATH <- paste0(LOGFILE_DIR, LOGFILE)
+
+# create the directory structure
+generativeart::setup_directories(IMG_DIR, IMG_SUBDIR, IMG_SUBDIR2, LOGFILE_DIR)
+
+my_formula <- list(
+  x = quote(runif(100,-100,100) * x_i^sin(x)),
+  y = quote(runif(100,-100,100) * y_i*cos(y))
+)
+
+
+generativeart::generate_img(formula = my_formula,
+                            nr_of_img = 5, polar = TRUE,
+                            color = "red", background_color = "black")
+
+```
