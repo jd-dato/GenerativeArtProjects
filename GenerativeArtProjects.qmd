@@ -13,11 +13,13 @@ All of the below images were made entirely in R using the `generativeart` R Pack
 
 !["The Path to Hell" (2023)](images/2023-02-11-16-42_seed_5374.png){fig-align="center"}
 
-!["Cyan Swirls" 2023](images/2023-02-11-16-15_seed_7317.png)
+!["Cyan Swirls" (2023)](images/2023-02-11-16-15_seed_7317.png)
 
 # How did I do this?
 
-**I have to be honest**, I relied very much on the provided documentation of the package and ChatGPT to start working. The first image, which I have titled, *The Path to Hell*, was made entirely by me. I used a large uniform distribution to run some simple equations in, and set the output colors to red and black in a Polar grid.
+**I have to be honest**, I relied very much on the provided documentation of the package and ChatGPT to start working. *Cyan Swirls* was made using the boilerplate code provided in the documentation of the program.
+
+The first image, which I have titled, *The Path to Hell*, was made entirely by me. I used a large uniform distribution to run some simple equations in, and set the output colors to red and black in a Polar grid.
 
 ## The Code for *The Path to Hell*:
 
